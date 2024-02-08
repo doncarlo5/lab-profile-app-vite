@@ -17,11 +17,16 @@ async function isAuthenticated(req, res, next) {
       algorithms: ['HS256'],
     });
 
-    const user = await User.findById(payload._id);
+    console.log(payload);
+
+    const user = await User.findById(payload.id);
 
     if (!user) {
       return res.status(401).json({ message: 'User not found' });
     }
+
+    req.user = user;
+
     next();
   } catch (error) {
     next(error);

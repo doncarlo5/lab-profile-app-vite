@@ -1,0 +1,16 @@
+.signup-page {
+  display: flex;
+  padding: 2em;
+}
+
+.form {
+  padding: 2em;
+}
+
+.info-top {
+  font-size: 1em;
+}
+
+.info-bottom {
+  font-size: 0.7em;
+}

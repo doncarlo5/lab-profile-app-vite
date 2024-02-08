@@ -1,0 +1,23 @@
+.homepage {
+  padding: 2em;
+}
+
+.title {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+.description {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+
+.button {
+  font-size: 1.5em;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  background-color: #4caf50;
+  color: white;
+  text-decoration: none;
+  margin-right: 1em;
+}

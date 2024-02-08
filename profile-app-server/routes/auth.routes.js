@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const bcrypt = require('bcrypt');
 const User = require('../models/User.model');
+const jwt = require('jsonwebtoken');
 const isAuthenticated = require('../middlewares/isAuthenticated');
 
 router.post('/signup', async (req, res, next) => {
@@ -26,7 +27,7 @@ router.post('/signup', async (req, res, next) => {
       campus,
       course,
     });
-    res.status(201).json(newUser, { message: 'User created' });
+    res.status(201).json({ user: newUser, message: 'User created' });
   } catch (error) {
     next(error);
   }
@@ -70,6 +71,7 @@ router.post('/login', async (req, res, next) => {
 });
 
 router.get('/verify', isAuthenticated, (req, res, next) => {
+  console.log('======', req.user);
   res.json(req.user);
 });
 
